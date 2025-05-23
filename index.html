@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Join the IEEE ET5 Student Branch. Discover membership benefits and steps to become a member.">
+  <meta property="og:title" content="IEEE ET5 Student Branch - Membership">
+  <meta property="og:description" content="Join the IEEE ET5 Student Branch. Discover membership benefits and steps to become a member.">
+  <meta property="og:image" content="https://www.ieee.org/content/dam/ieee-web/standards/images/logo.svg ">
+  <meta property="og:url" content="https://yourwebsite.com/membership.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>IEEE ET5 Student Branch - Membership</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css ">
+
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Root variables for consistent theming */
+    :root {
+      --primary: #00629B; /* IEEE Blue */
+      --secondary: #FFD100; /* IEEE Gold */
+      --dark: #003865; /* Dark Blue */
+      --light: #E9F1F7; /* Light Grayish Blue */
+      --accent: #00A5E3; /* Lighter Blue */
+      --success: #28a745; /* Green for success messages */
+      --error: #dc3545; /* Red for error messages */
+    }
+
+    /* Universal box-sizing and font family */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+      color: #333;
+      background-color: var(--light);
+      scroll-behavior: smooth;
+      background-image:
+        radial-gradient(circle at 10% 20%, rgba(0, 98, 155, 0.05) 5%, transparent 5%),
+        radial-gradient(circle at 90% 80%, rgba(255, 209, 0, 0.05) 5%, transparent 5%);
+      background-size: 50px 50px, 50px 50px;
+      background-attachment: fixed;
+    }
+
+    h1, h2, h3 {
+      font-weight: bold;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img[loading="lazy"] {
+      opacity: 0.8;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    img[loading="lazy"]:loaded {
+      opacity: 1;
+    }
+
+    /* Header Styling */
+    header#header {
+      background: linear-gradient(120deg, var(--primary), var(--accent));
+      color: white;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease, border-bottom 0.3s ease;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 50px;
+      margin-right: 10px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+
+    .logo-text h1 {
+      font-size: 1.5rem;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .logo-text span {
+      font-size: 0.8rem;
+      opacity: 0.8;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      color: white;
+      font-weight: 500;
+      position: relative;
+      transition: all 0.3s ease;
+      padding-bottom: 5px;
+    }
+
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background: var(--secondary);
+      transition: width 0.3s ease;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    nav ul li a:hover {
+      color: var(--secondary);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: white;
+      padding: 0.5rem;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .menu-toggle:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        width: 100%;
+        background: var(--primary);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      nav.active {
+        display: block;
+      }
+
+      nav ul {
+        flex-direction: column;
+        padding: 1rem 0;
+        text-align: left;
+      }
+
+      nav ul li {
+        margin: 0.5rem 0;
+        padding: 0 1rem;
+      }
+    }
+
+    main {
+      padding: 2rem 1rem;
+      max-width: 1200px;
+      margin: auto;
+      position: relative;
+      z-index: 2;
+      background-color: transparent;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      direction: ltr;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      background-color: white;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: var(--primary);
+      position: relative;
+      display: inline-block;
+      padding-bottom: 15px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 4px;
+      background: var(--secondary);
+      bottom: 0;
+      left: 25%;
+      border-radius: 50px;
+    }
+
+    /* Membership Steps */
+    .membership-steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .step {
+      flex: 1 1 280px;
+      max-width: 350px;
+      background: white;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(30px) scale(0.95);
+    }
+
+    .step:nth-child(1) { transition-delay: 0s; }
+    .step:nth-child(2) { transition-delay: 0.1s; }
+    .step:nth-child(3) { transition-delay: 0.2s; }
+
+    .step.animated {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .step:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .step-number {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      width: 40px;
+      height: 40px;
+      background: var(--secondary);
+      color: var(--dark);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.1rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .step h3 {
+      margin-bottom: 1rem;
+      color: var(--primary);
+      padding-left: 50px;
+    }
+
+    /* Call to Action Buttons */
+    .cta-button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      display: inline-block;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      background-image: linear-gradient(to right, var(--primary) 0%, var(--accent) 100%);
+      background-size: 200% auto;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    }
+
+    .cta-button:hover {
+      background-position: right center;
+      background-image: linear-gradient(to right, var(--dark) 0%, var(--primary) 100%);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Footer Styling */
+    footer {
+      background: linear-gradient(135deg, var(--dark), var(--primary));
+      color: white;
+      padding: 3rem 0 1rem;
+      text-align: left;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-between;
+    }
+
+    .footer-section {
+      flex: 1 1 250px;
+      min-width: 200px;
+    }
+
+    .footer-section h3 {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      border-bottom: 2px solid var(--secondary);
+      padding-bottom: 5px;
+      display: inline-block;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-section ul li a,
+    .footer-section ul li {
+      color: white;
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-section ul li a:hover {
+      color: var(--secondary);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: white;
+      transition: all 0.3s ease, transform 0.2s ease;
+    }
+
+    .social-links a:hover {
+      background: var(--secondary);
+      color: var(--dark);
+      transform: translateY(-5px) scale(1.1);
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* Animations */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px) scale(0.95);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .animate-on-scroll.animated {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+      .header-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .logo {
+        margin-bottom: 1rem;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav ul li {
+        margin: 0 0.5rem 0.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 2rem 1rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .step {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-section {
+        min-width: unset;
+        width: 100%;
+      }
+
+      .footer-section h3 {
+        margin: 1rem auto 1rem;
+      }
+
+      .footer-section ul li, .social-links {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <noscript>
+    This website uses JavaScript. Please enable JavaScript to view all features of the site.
+  </noscript>
+
+  <header id="header">
+    <div class="header-container">
+      <div class="logo">
+        <img src="https://ieee.org.eg/wp-content/uploads/2022/05/logo-P-Mohamed-Adel-Hegazy-300x300.jpg " alt="IEEE ET5 Logo" loading="lazy">
+        <div class="logo-text">
+          <h1>IEEE ET5 SB</h1>
+          <span>IEEE Egyptian Students' Branch</span>
+        </div>
+      </div>
+      <nav id="navMenu">
+        <ul>
+          <li><a href="https://minal0p.github.io/IEEE-ET5/">Home</a></li>
+          <li><a href="https://minal0p.github.io/IEEE-ET5/#about">About Us</a></li>
+          <li><a href="https://minal0p.github.io/IEEE-ET5/#board-members">Board Team</a></li>
+          <li><a href="https://minal0p.github.io/IEEE-ET5-Membership/">Membership</a></li>
+          <li><a href="https://minal0p.github.io/IEEE-ET5/#events">Events</a></li>
+          <li><a href="https://minal0p.github.io/IEEE-ET5/#resources">Resources</a></li>
+          <li><a href="https://minal0p.github.io/IEEE-ET5-Ai/">AI Helper</a></li>
+          <li><a href="https://minal0p.github.io/IEEE-ET5/#contact-us">Contact Us</a></li>
+        </ul>
+      </nav>
+      <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="membership" class="animate-on-scroll">
+      <h2 class="section-title">Membership</h2>
+      <p style="text-align:center; max-width: 800px; margin: auto;">
+        Join the IEEE ET5 community and benefit from exclusive resources and events for IEEE members. Be part of a global network of engineers and scientists.
+      </p>
+      <div class="membership-steps">
+        <div class="step animate-on-scroll">
+          <div class="step-number">1</div>
+          <h3>Registration</h3>
+          <p>Register through the official IEEE website and choose ET5 as your student branch. A simple and direct process.</p>
+        </div>
+        <div class="step animate-on-scroll">
+          <div class="step-number">2</div>
+          <h3>Payment</h3>
+          <p>Complete the payment process through the website's electronic system. Secure and multiple payment options are available.</p>
+        </div>
+        <div class="step animate-on-scroll">
+          <div class="step-number">3</div>
+          <h3>Join</h3>
+          <p>Get ready to participate in activities and build a strong network! Start your journey with us today.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="https://minal0p.github.io/IEEE-ET5/">Home</a></li>
+          <li><a href="https://minal0p.github.io/IEEE-ET5/#about">About Us</a></li>
+          <li><a href="https://minal0p.github.io/IEEE-ET5/#board-members">Board Team</a></li>
+          <li><a href="https://minal0p.github.io/IEEE-ET5-Membership/">Membership</a></li>
+          <li><a href="https://minal0p.github.io/IEEE-ET5/#events">Events</a></li>
+          <li><a href="https://minal0p.github.io/IEEE-ET5/#resources">Resources</a></li>
+          <li><a href="https://minal0p.github.io/IEEE-ET5-Ai/">AI Helper</a></li>
+          <li><a href="https://minal0p.github.io/IEEE-ET5/#contact-us">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <ul>
+          <li><i class="fas fa-envelope"></i> ieee.et50@gmail.com</li>
+          <li><i class="fas fa-phone-alt"></i> +20 120 300 6152</li>
+          <li><i class="fas fa-map-marker-alt"></i> New Cairo Academy, Fifth Settlement </li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="https://facebook.com/IEEE.ET5.SB " target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://linkedin.com/company/ieee-et5-student-branch " target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://instagram.com/ieee.et5.sb " target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2025 IEEE ET5 Student Branch. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    if (menuToggle && navMenu) {
+      menuToggle.addEventListener('click', function () {
+        navMenu.classList.toggle('active');
+      });
+    }
+
+    // Header background change on scroll
+    window.addEventListener('scroll', function () {
+      const header = document.getElementById('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Animate on Scroll functionality
+    const animateElements = document.querySelectorAll('.animate-on-scroll');
+
+    function checkScroll() {
+      animateElements.forEach(el => {
+        const elementPosition = el.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.3;
+
+        if (elementPosition < screenPosition) {
+          el.classList.add('animated');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', checkScroll);
+    window.addEventListener('load', checkScroll);
+  </script>
+</body>
+</html>
