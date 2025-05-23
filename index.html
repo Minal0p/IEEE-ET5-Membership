@@ -7,7 +7,7 @@
   <meta property="og:title" content="IEEE ET5 Student Branch - Membership">
   <meta property="og:description" content="Join the IEEE ET5 Student Branch. Discover membership benefits and steps to become a member.">
   <meta property="og:image" content="https://www.ieee.org/content/dam/ieee-web/standards/images/logo.svg ">
-  <meta property="og:url" content="https://yourwebsite.com/membership.html">
+  <meta property="og:url" content="https://minal0p.github.io/IEEE-ET5-Membership/">
   <meta name="twitter:card" content="summary_large_image">
   <title>IEEE ET5 Student Branch - Membership</title>
 
@@ -225,6 +225,82 @@
       border-radius: 50px;
     }
 
+    /* Membership Benefits */
+    .benefits-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .benefit-card {
+      flex: 1 1 300px;
+      max-width: 450px;
+      background: var(--light);
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      text-align: left;
+      border-left: 5px solid var(--primary);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(30px) scale(0.95);
+    }
+
+    .benefit-card.animated {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .benefit-card h3 {
+      color: var(--dark);
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .benefit-card ul {
+      list-style: none;
+      padding-left: 0;
+      counter-reset: benefit-counter; /* Initialize counter for numbered list */
+    }
+
+    .benefit-card ul li {
+      margin-bottom: 0.7rem;
+      color: #555;
+      display: flex;
+      align-items: flex-start; /* Aligns items to the start of the cross axis (top) */
+      position: relative;
+      padding-left: 60px; /* Increased space for number and icon */
+      text-align: left; /* Ensure text aligns left within the padding */
+    }
+
+    .benefit-card ul li::before {
+      counter-increment: benefit-counter; /* Increment counter */
+      content: counter(benefit-counter) "."; /* Display number */
+      position: absolute;
+      left: 0;
+      top: 0; /* Align to the very top of the li content box */
+      font-weight: bold;
+      color: var(--primary);
+      font-size: 1rem;
+      width: 25px; /* Fixed width for numbering */
+      text-align: right; /* Align number to the right */
+    }
+
+    .benefit-card ul li .benefit-icon { /* New class for the icon */
+      color: var(--accent);
+      font-size: 1.1rem;
+      position: absolute;
+      left: 30px; /* Position after the number, with a small gap */
+      top: 0; /* Align to the very top of the li content box */
+    }
+
     /* Membership Steps */
     .membership-steps {
       display: flex;
@@ -266,7 +342,7 @@
     .step-number {
       position: absolute;
       top: 15px;
-      right: 15px;
+      left: 15px; /* Changed from right to left for LTR alignment */
       width: 40px;
       height: 40px;
       background: var(--secondary);
@@ -283,7 +359,8 @@
     .step h3 {
       margin-bottom: 1rem;
       color: var(--primary);
-      padding-left: 50px;
+      padding-left: 65px; /* Adjusted padding-left to clear the number (40px width + 15px left + 10px margin) */
+      text-align: left; /* Ensure text aligns left */
     }
 
     /* Call to Action Buttons */
@@ -440,7 +517,7 @@
         font-size: 2rem;
       }
 
-      .step {
+      .step, .benefit-card {
         flex: 1 1 100%;
         max-width: 100%;
       }
@@ -486,8 +563,8 @@
           <li><a href="https://minal0p.github.io/IEEE-ET5/#about">About Us</a></li>
           <li><a href="https://minal0p.github.io/IEEE-ET5/#board-members">Board Team</a></li>
           <li><a href="https://minal0p.github.io/IEEE-ET5-Membership/">Membership</a></li>
-          <li><a href="https://minal0p.github.io/IEEE-ET5/#events">Events</a></li>
-          <li><a href="https://minal0p.github.io/IEEE-ET5/#resources">Resources</a></li>
+          <li><a href="https://minal0p.github.io/IEEE-ET5-Events/">Events</a></li>
+          <li><a href="https://minal0p.github.io/IEEE-ET5-Resources/">Resources</a></li>
           <li><a href="https://minal0p.github.io/IEEE-ET5-Ai/">AI Helper</a></li>
           <li><a href="https://minal0p.github.io/IEEE-ET5/#contact-us">Contact Us</a></li>
         </ul>
@@ -502,22 +579,55 @@
       <p style="text-align:center; max-width: 800px; margin: auto;">
         Join the IEEE ET5 community and benefit from exclusive resources and events for IEEE members. Be part of a global network of engineers and scientists.
       </p>
+
+      <div class="benefits-container">
+        <div class="benefit-card animate-on-scroll">
+          <h3>Importance for Students</h3>
+          <ul>
+            <li><span class="benefit-icon"><i class="fas fa-book-open"></i></span> Access to Exclusive Resources: Gain access to IEEE Xplore Digital Library, online courses, and publications that enhance your academic learning.</li>
+            <li><span class="benefit-icon"><i class="fas fa-users"></i></span> Networking Opportunities: Connect with faculty, industry professionals, and fellow students through events, workshops, and conferences.</li>
+            <li><span class="benefit-icon"><i class="fas fa-cogs"></i></span> Skill Development: Participate in technical workshops, coding competitions, and practical projects to build hands-on skills.</li>
+            <li><span class="benefit-icon"><i class="fas fa-compass"></i></span> Career Guidance: Receive mentorship and insights into various engineering career paths, helping you shape your future.</li>
+            <li><span class="benefit-icon"><i class="fas fa-crown"></i></span> Leadership Roles: Opportunities to take on leadership positions within the student branch, developing organizational and management skills.</li>
+          </ul>
+        </div>
+        <div class="benefit-card animate-on-scroll">
+          <h3>Importance for Graduates</h3>
+          <ul>
+            <li><span class="benefit-icon"><i class="fas fa-network-wired"></i></span> Professional Networking: Expand your professional network globally, connecting with peers and experts in your field.</li>
+            <li><span class="benefit-icon"><i class="fas fa-brain"></i></span> Continuous Learning: Stay updated with the latest advancements through IEEE's vast collection of research, standards, and continuing education programs.</li>
+            <li><span class="benefit-icon"><i class="fas fa-rocket"></i></span> Career Advancement: Access to IEEE Job Site, career development tools, and professional certifications that can boost your career.</li>
+            <li><span class="benefit-icon"><i class="fas fa-award"></i></span> Industry Recognition: Being an IEEE member demonstrates your commitment to your profession and enhances your credibility.</li>
+            <li><span class="benefit-icon"><i class="fas fa-globe-americas"></i></span> Global Community: Be part of a diverse and inclusive community that fosters innovation and collaboration across borders.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="section-title" style="margin-top: 4rem;">How to Register</h2>
+      <p style="text-align:center; max-width: 800px; margin: auto;">
+        Becoming an IEEE member is a straightforward process. Follow these steps to join our global community.
+      </p>
       <div class="membership-steps">
         <div class="step animate-on-scroll">
           <div class="step-number">1</div>
-          <h3>Registration</h3>
-          <p>Register through the official IEEE website and choose ET5 as your student branch. A simple and direct process.</p>
+          <h3>Create an IEEE Account</h3>
+          <p>Visit the <a href="https://www.ieee.org/membership/join/index.html" target="_blank" style="color: var(--primary); text-decoration: underline;">official IEEE website</a> and create a new account. You'll need to provide your personal details and academic information.</p>
         </div>
         <div class="step animate-on-scroll">
           <div class="step-number">2</div>
-          <h3>Payment</h3>
-          <p>Complete the payment process through the website's electronic system. Secure and multiple payment options are available.</p>
+          <h3>Select Membership Type & Branch</h3>
+          <p>Choose your membership type (e.g., Student Member, Professional Member). During the process, select "IEEE ET5 Student Branch" as your affiliated branch.</p>
         </div>
         <div class="step animate-on-scroll">
           <div class="step-number">3</div>
-          <h3>Join</h3>
-          <p>Get ready to participate in activities and build a strong network! Start your journey with us today.</p>
+          <h3>Complete Payment</h3>
+          <p>Proceed to the payment section. You can pay securely online using various methods. Once payment is confirmed, your membership is active!</p>
         </div>
+      </div>
+      <div style="margin-top: 3rem;">
+        <a href="https://www.ieee.org/membership/join/index.html" target="_blank" class="cta-button">
+          Join IEEE Now <i class="fas fa-user-plus"></i>
+        </a>
       </div>
     </section>
   </main>
@@ -531,8 +641,8 @@
           <li><a href="https://minal0p.github.io/IEEE-ET5/#about">About Us</a></li>
           <li><a href="https://minal0p.github.io/IEEE-ET5/#board-members">Board Team</a></li>
           <li><a href="https://minal0p.github.io/IEEE-ET5-Membership/">Membership</a></li>
-          <li><a href="https://minal0p.github.io/IEEE-ET5/#events">Events</a></li>
-          <li><a href="https://minal0p.github.io/IEEE-ET5/#resources">Resources</a></li>
+          <li><a href="https://minal0p.github.io/IEEE-ET5-Events/">Events</a></li>
+          <li><a href="https://minal0p.github.io/IEEE-ET5-Resources/">Resources</a></li>
           <li><a href="https://minal0p.github.io/IEEE-ET5-Ai/">AI Helper</a></li>
           <li><a href="https://minal0p.github.io/IEEE-ET5/#contact-us">Contact Us</a></li>
         </ul>
